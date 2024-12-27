@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convite para Kamilla</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #no {
+            position: absolute;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Página inicial -->
+    <div id="main-content">
+        <h1>Quer ir tomar uma cervejinha comigo? 🍺🍺</h1>
+        <button id="yes">Sim</button>
+        <button id="no">Não</button>
+    </div>
+
+    <!-- Página de confirmação -->
+    <div id="confirmation-content" class="hidden">
+        <style>
+            body {
+                background-color: black;
+                color: white; /* Optional: Set text color to white for visibility */
+            }
+        </style>
+        <h1>Sabia que não ia resistir hehehe =D! Te mando mais informações no WhatsApp!🥰🥰</h1>
+    </div>
+
+    <script>
+        const noButton = document.getElementById("no");
+        const yesButton = document.getElementById("yes");
+        const mainContent = document.getElementById("main-content");
+        const confirmationContent = document.getElementById("confirmation-content");
+
+        // Move o botão "Não" quando o mouse passa por cima
+        noButton.addEventListener("mouseover", () => {
+            const x = Math.random() * (window.innerWidth - 100);
+            const y = Math.random() * (window.innerHeight - 50);
+            noButton.style.left = `${x}px`;
+            noButton.style.top = `${y}px`;
+        });
+
+        // Exibe a mensagem de confirmação quando "Sim" é clicado
+        yesButton.addEventListener("click", () => {
+            mainContent.classList.add("hidden");
+            confirmationContent.classList.remove("hidden");
+        });
+    </script>
+</body>
+</html>
